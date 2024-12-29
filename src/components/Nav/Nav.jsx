@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../assets/logo.svg'
 import './nav.css'
+import { HashLink } from 'react-router-hash-link'
 
 function Nav() {
   return (
@@ -11,10 +12,10 @@ function Nav() {
         </a>
         <ul className="navlinks">
             <div className="close">&times;</div>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Works</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact"><span className='hireme'>Hire Me</span></a></li>
+            <li><HashLink to="#home">Home</HashLink></li>
+            <li><HashLink to="#projects">Works</HashLink></li>
+            <li><HashLink to="#about">About Me</HashLink></li>
+            <li><HashLink to="#contact"><span className='hireme'>Hire Me</span></HashLink></li>
         </ul>
         <div className="menu">
             <div className="burger"></div>

@@ -1,0 +1,104 @@
+#projects {
+    padding-top: calc(var(--nav-height) * 2);
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        
+        .project {
+            display: flex;
+            gap: 2rem;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+
+            &:nth-child(odd) {
+                flex-direction: row-reverse;
+
+                .screenshot {
+                    transform-origin: right;
+                }
+
+                .details {
+                    align-items: end;
+                    text-align: right;
+
+                    .actions {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+            
+            .screenshot {
+                animation: scroll 3s linear  alternate infinite;
+                background-size: cover;
+                transition: 0.3s;
+                transform-origin: left;
+
+                &.algosphere {
+                    width: min(80vw, 450px);
+                    aspect-ratio: 16/8.5;
+                    background-image: url('../../assets/algosphere.jpeg');
+                }
+                
+                &.catland {
+                    width: min(80vw, 450px);
+                    aspect-ratio: 16/8.5;
+                    background-image: url('../../assets/catland.jpeg');
+                }
+
+                &.iplay {
+                    width: min(60vh, 250px);
+                    aspect-ratio: 9/16;
+                    background-image: url('../../assets//iplay.jpeg');
+                }
+
+                &.calculator {
+                    width: min(60vh, 250px);
+                    aspect-ratio: 9/15;
+                    background-image: url('../../assets/calculator.jpeg');
+                }
+
+                &:not(:hover) {
+                    animation-play-state: paused;
+                    transform: rotateX(0deg) rotateY(0deg);
+                }
+
+                &:hover {
+                    position: relative;
+                    z-index: 5;
+                    box-shadow: 4px 4px 16px 2px var(--secondary);
+                }
+            }
+
+            .details {
+                text-wrap: balance;
+                flex: 1;
+
+                .sticky-content {
+                    position: sticky;
+                    top: var(--nav-height);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    gap: 1rem;
+                }
+
+                .actions {
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+        .show-projects {
+            align-self: flex-end;
+        }
+    }
+}

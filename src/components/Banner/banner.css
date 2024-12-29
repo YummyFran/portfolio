@@ -1,0 +1,86 @@
+#home {
+    padding-top: var(--nav-height);
+    display: flex;
+
+    header {
+        color: #bebebe;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            --inherited-color: var(--midtone); 
+            font-size: 1.5rem;
+            width: fit-content;
+
+            #activity {
+                color: var(--midtone);
+                font-weight: 800;
+                animation: alternatingOpacity 3s ease-in-out forwards infinite;
+
+                &::after {
+                    content: 'things';
+                    color: inherit;
+                    font-weight: inherit;
+                    animation: changeText 18s ease-in-out forwards infinite;
+                }
+            }
+
+            &.first {
+                --delay: 0.5s;
+                --text-delay: 1s;
+                margin-top: 3rem;
+            }
+
+            &.last {
+                --delay: 1.3s;
+                --text-delay: 1.8s;
+            }
+        }
+        
+        h1 {
+            --inherited-color: var(--accent); 
+            --delay: 0.9s;
+            --text-delay: 1.4s;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 0.05rem;
+        }
+
+        .line {
+            position: relative;
+            visibility: hidden;
+            animation: show 0.5s ease var(--text-delay) forwards;
+        }
+
+
+        .line::after {
+            content: '';
+            background-color: var(--inherited-color);
+            height: 100%;
+            position: absolute;
+            visibility: visible;
+            top: 0;
+            animation: expand 0.8s ease-in-out var(--delay) forwards;
+        }
+
+        .cta {
+            background-color: var(--midtone);
+            padding: 1rem 2rem;
+            margin-top: 1.5rem;
+            width: fit-content;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            transition: 0.3s;
+            box-shadow: 2px 2px 4px var(--primary);
+            opacity: 0;
+            animation: show 1s ease-in-out 1.5s forwards;
+
+            &:hover {
+                background-color: var(--accent);
+            }
+        }
+    }
+}

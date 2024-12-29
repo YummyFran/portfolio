@@ -1,0 +1,103 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--inline-padding-l);
+    height: var(--nav-height);
+    font-size: 1.1rem;
+    transition: 0.3s;
+    position: sticky;
+    top: 0;
+    margin-top: calc(-1 * var(--nav-height));
+    z-index: 10;
+    background-image: linear-gradient(var(--primary), transparent);
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--accent);
+
+        .logo {
+            height: 2rem;
+        }
+    }
+
+    .navlinks {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 1rem;
+
+        .close {
+            display: none;
+        }
+
+        li {
+            display: flex;
+        }
+
+        a {
+            line-height: var(--nav-height);
+            text-decoration: none;
+            color: var(--midtone);
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: var(--accent);
+
+                .hireme {
+                    border-color: var(--accent);
+                }
+            }
+            
+            .hireme {
+                border: 2px solid var(--midtone);
+                padding: 0.4rem 1rem;
+                border-radius: 0.4rem;
+            }
+        }
+    }
+
+    .menu {
+        height: 3rem;
+        width: 3rem;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        
+        .burger {
+            
+            width: 1.2rem;
+            height: 2px;
+            background-color: var(--midtone);
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: -5px;
+                height: 2px;
+                width: 0.8rem;
+                background-color: inherit;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: -6px;
+                height: 2px;
+                width: 1rem;
+                background-color: inherit;
+            }
+
+        }
+
+        &:hover .burger {
+            background-color: var(--accent);
+        }
+    }
+}

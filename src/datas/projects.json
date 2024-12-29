@@ -1,0 +1,32 @@
+[
+    {
+        "name": "algosphere",
+        "title": "AlgoSphere",
+        "description": "AlgoSphere is a social media and learning platform for developers, offering interactive coding challenges, online code compilers, and the ability to save and share code.",
+        "demo": "https://algosphere.tech",
+        "source": "https://github.com/YummyFran/algosphere",
+        "featured": true
+    },{
+        "name": "iplay",
+        "title": "iplay",
+        "description": "iPlay is my clone version of the mobile application \"WePlay\". It uses Firebase Authentication and Firestore for user data handling.",
+        "demo": "https://yummyfran.github.io/iPlay/#/",
+        "source": "https://github.com/YummyFran/iPlay",
+        "featured": true
+    },{
+        "name": "catland",
+        "title": "Catland",
+        "description": "Cat Land is a project that displays informations about different cat breeds. This was my first React project that uses React Router and API calls.",
+        "demo": "https://yummyfran.github.io/catland/#/cats",
+        "source": "https://github.com/YummyFran/catland",
+        "featured": true
+    },{
+        "name": "calculator",
+        "title": "Calculator",
+        "description": "A basic Programmer's Calculator with basic calculation and convertion functionalities.",
+        "demo": "https://yummyfran.github.io/personal-portfolio-optproject/component/calculator.html",
+        "source": "https://github.com/YummyFran/calculator-js",
+        "pop-up": true,
+        "featured": true
+    }
+]

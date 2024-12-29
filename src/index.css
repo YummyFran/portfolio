@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary: #040D12;
+    --secondary: #183D3D;
+    --midtone: #5C8374;
+    --accent: #93B1A6;
+
+    --light-x: 70%;
+    --light-y: 50%;
+    --light-radius: 25%;
+
+    --cursor-size: 0.5rem;
+    --bullet-size: 0.7rem;
+
+    --inline-padding-s: 1rem;
+    --inline-padding-m: 5vw;
+    --inline-padding-l: 10rem;
+
+    --nav-height: 4rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: radial-gradient(
+        circle at 
+            var(--light-x) 
+            var(--light-y), 
+            var(--secondary), 
+            var(--primary) 
+            var(--light-radius)
+    );
+    background-size: cover;
+    overflow-x: hidden;
+    font-family: 'Poppins', 'Poppins_local', sans-serif;
+    width: 100vw;
+    min-height: 100vh;
+    color: var(--accent);
+}
+
+.primary--btn {
+    background-color: var(--midtone);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--primary);
+    transition: 0.3s;
+    box-shadow: 2px 2px 4px var(--primary);
+    transition: 0.1s;
+
+    &:hover {
+        background-color: var(--accent);
+    }
+}
+
+.secondary--btn {
+    border: 1px solid var(--midtone);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--midtone);
+    transition: 0.1s;
+    box-shadow: 2px 2px 4px var(--primary);
+
+    &:hover {
+        background-color: var(--midtone);
+        color: var(--primary);
+    }
+}
+
+.tertiary--btn {
+    color: var(--midtone);
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    transition: 0.3s ease-in;
+    opacity: 0.5;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        border-radius: 10px;
+        background: var(--midtone);
+        transition: inherit;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        height: 50%;
+        aspect-ratio: 1;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        rotate: 45deg;
+        transform: translate(50%, 20%);
+        right: -1rem;
+    }
+
+    &:hover {
+        color: var(--accent);
+        opacity: 1;
+
+        &::before {
+            background-color: var(--accent);
+            width: 100%;
+        }
+
+        &::after {
+            animation: pulse 0.5s infinite alternate ease-out;
+        }
+    }
+}
+
+.homepage, .project-page {
+    min-height: 100vh;
+    backdrop-filter: blur(2px) brightness(0.4) hue-rotate(330deg);
+}
+
+section {
+    padding-inline: var(--inline-padding-l);
+    position: relative;
+    min-height: 100vh;
+    transition: 0.3s;
+    opacity: 0;
+
+    &.show-section, &:first-of-type {
+        opacity: 1;
+    }
+
+    .container {
+        padding-left: 3rem;
+    }
+
+    .pseudo {
+        display: block;
+        font-size: 0.9rem;
+        color: #506c61;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: var(--bullet-size);
+            height: var(--bullet-size);
+            border-radius: 50%;
+            background-color: var(--midtone);
+            box-shadow: 0 0 0 1px var(--primary), 0 0 0 2px var(--midtone);
+            position: absolute;
+            top: 50%; left: -3rem;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .timeline {
+        width: 1px;
+        position: absolute;
+        top: 0;
+        left: var(--inline-padding-l);
+        bottom: 0;
+        transform: translateX(-100%);
+    }
+
+    &:first-of-type .timeline {
+        top: calc(5rem + var(--bullet-size) + var(--nav-height));
+    }
+
+    &:nth-child(even) .timeline {
+        background-image: linear-gradient(var(--midtone), var(--secondary));
+    }
+
+    &:nth-child(odd) .timeline {
+        background-image: linear-gradient(var(--secondary), var(--midtone));
+    }
 }

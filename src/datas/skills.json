@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Front End",
+        "illustration": "/assets/svgs/Front End.svg",
+        "skills": [
+            {
+                "name": "React JS",
+                "icon": "assets/svgs/react-js-icon.svg"
+            },{
+                "name": "Javascript/ ES6",
+                "icon": "assets/svgs/javascript-programming-language-icon.svg"
+            },{
+                "name": "HTML 5",
+                "icon": "assets/svgs/html5-balck-icon.svg"
+            },{
+                "name": "CSS 3",
+                "icon": "assets/svgs/css3-svgrepo-com (1).svg"
+            }
+        ]
+    },{
+        "title": "State Management",
+        "illustration": "assets/svgs/State Management.svg",
+        "skills": [
+            {
+                "name": "Redux",
+                "icon": "assets/svgs/redux-icon.svg"
+            },{
+                "name": "Tanstack/ React Query",
+                "icon": "assets/svgs/react-query-icon.svg"
+            }
+        ]
+    },{
+        "title": "UI Libraries",
+        "illustration": "assets/svgs/UI Libraries.svg",
+        "skills": [
+            {
+                "name": "Material UI",
+                "icon": "assets/svgs/material-ui-svgrepo-com.svg"
+            },{
+                "name": "Tailwind CSS",
+                "icon": "assets/svgs/tailwind-css-svgrepo-com.svg"
+            }
+        ]
+    },{
+        "title": "Tools",
+        "illustration": "assets/svgs/Tools.svg",
+        "skills": [
+            {
+                "name": "Git",
+                "icon": "assets/svgs/git-svgrepo-com.svg"
+            },{
+                "name": "Figma",
+                "icon": "assets/svgs/figma-svgrepo-com.svg"
+            }
+        ]
+    }
+]
